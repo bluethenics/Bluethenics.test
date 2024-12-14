@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+        <head>
+            <meta charset="UFT-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <link rel="stylesheet" href="style.css">
+            <title>bluethenics</title>
+        </head>
+        <style>
+          
+            body {
+              background: linear-gradient(90deg, rgba(0, 0, 255, 0.6) 0%,rgba(0,0,0),/* rgba(255, 0, 0, 0.6)*/  rgba(0, 0, 255, 0.6) 100% 0%);
+              background-repeat: no-repeat;
+              background-attachment: fixed;
+              background-size: 200% 100%;
+              height: 100vh;
+              font-family: 'Roboto', sans-serif;
+              display: flex;
+              justify-content: center;
+              color: white;
+              
+            }
+
+            /* Optional: Adding a slight movement effect to make it feel dynamic */
+            @keyframes lightShift {
+              0% {
+                background-position: 100% 50%;
+              }
+              100% {
+                background-position: 0% 50%;
+              }
+            }
+
+            body {
+              animation: lightShift 10s ease-in-out infinite;
+            }
+
+
+           .img-info {
+                background-color: #0140ad; /* Blue */
+                
+                padding: 20px;
+                border-radius: 8px; /* Rounded corners for a modern look */
+                margin: 20px auto;
+                width: 80%;
+                max-width: 800px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+            }
+
+            /* Heading and paragraph styles */
+            .img-info h2 {
+                font-size: 2em;
+                margin-bottom: 10px;
+                color: aliceblue;
+            }
+
+            .img-info p {
+                line-height: 1.6;
+                font-size: 1em;
+                color: aliceblue;
+            }
+            .img-info img{
+              border-radius: 20px;
+            }
+           
+           .plange-img{
+            border-radius: 10px;
+           }
+            /* Button Styling */
+            .glow-button {
+              font-size: 20px;
+              padding: 15px 30px;
+              color: white;
+              background: linear-gradient(135deg, #00f, rgb(8, 1, 95));
+              border: none;
+              border-radius: 10px;
+              cursor: pointer;
+              text-transform: uppercase;
+              letter-spacing: 1.5px;
+              box-shadow: 0 0 10px rgba(0, 0, 255, 0.5), 0 0 40px rgba(55, 98, 240, 0.5);
+              transition: all 0.3s ease-in-out;
+              position: relative;
+              overflow: hidden;
+            }
+        
+            /* Button Hover Effect */
+            .glow-button:hover {
+              color: #000;
+              background: #fff;
+              transform: scale(1.1) rotate(-2deg); /* Zoom and slight tilt */
+              box-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 60px rgba(0, 0, 255, 0.8);
+            }
+        
+            /* Animation effect */
+            .glow-button::before {
+              content: '';
+              position: absolute;
+              top: -100%;
+              left: 0;
+              width: 100%;
+              height: 300%;
+              background: linear-gradient(transparent, rgba(255, 255, 255, 0.2), transparent);
+              animation: glow-animation 3s infinite;
+            }
+        
+            /* Hover Transition for Before Element */
+            .glow-button:hover::before {
+              animation: glow-animation-hover 1.5s infinite;
+            }
+        
+            /* Animation Keyframes */
+            @keyframes glow-animation {
+              0% {
+                top: -100%;
+              }
+              50% {
+                top: 100%;
+              }
+              100% {
+                top: -100%;
+              }
+            }
+        
+            @keyframes glow-animation-hover {
+              0%, 100% {
+                top: -50%;
+              }
+              50% {
+                top: 50%;
+              }
+            }
+
+            /* Text styling */
+            .animated-text {
+              position: absolute;
+              top: 50%;
+              left: 35%;
+              transform: translate(-50%, -50%);
+              color: white;
+              font-size: 2.5rem;
+              font-weight: bold;
+              text-align: left;
+              text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+              animation: fadeInUp 2s ease-in-out;
+              
+            }
+
+
+            /* Media Query for Larger Screens */
+@media (min-width: 800px) {
+  .animated-text {
+    font-size: 8vw;  /* Larger text on desktop */
+    letter-spacing: 0.2vw;
+  }
+}
+
+/* Media Query for Extra-Large Screens */
+@media (min-width: 800px) {
+  .animated-text {
+    font-size: 8vw;  /* Even larger for wide screens */
+    letter-spacing: 0.1vw;
+  }
+}
+
+            
+
+            /* Animation keyframes */
+            @keyframes fadeInUp {
+              from {
+                opacity: 0;
+                transform: translate(-50%, -60%);
+              }
+              to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+              }
+            }
+
+
+           
+
+
+
+
+
+
+
+
+
+        /* Popup Form Styles */
+.form-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #001F54; /* Blue */
+    padding: 20px;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+.form-content {
+    position: relative;
+}
+
+.hidden {
+    display: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label, form input, form button {
+    margin-bottom: 10px;
+}
+
+form input {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #000000;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #3c20dd;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+.L-S {
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+
+/*limited time*/
+.limited-time-button {
+  background-color: #0aca54;  /* Bright blue */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px #1a73e8, 0 0 15px #1a73e8;
+}
+
+.limited-time-button:hover {
+  background-color: #155ab2;  /* Darker blue */
+  transform: scale(1.1) rotate(-2deg); /* Zoom and slight tilt */
+  box-shadow: 0 0 10px #1a73e8, 0 0 20px #1a73e8, 0 0 40px #1a73e8;
+}
+
+.limited-time-button:active {
+  background-color: #0f4285; /* Darkest blue */
+  transform: scale(0.95);  /* Press effect */
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 10px #1a73e8, 0 0 20px #1a73e8, 0 0 40px #1a73e8;
+  }
+  50% {
+    box-shadow: 0 0 20px #1a73e8, 0 0 30px #1a73e8, 0 0 50px #1a73e8;
+  }
+  100% {
+    box-shadow: 0 0 10px #1a73e8, 0 0 20px #1a73e8, 0 0 40px #1a73e8;
+  }
+}
+
+.limited-time-button:hover {
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+
+
+
+
+
+          </style>
+<body>
+<div class="wrapper">
+  <header>
+      <nav>
+          <ul class="sidebar">
+              <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+              <li><a href="index.html">home</a></li>
+              <li><a href="shop.html">shop</a></li>
+              <li><a href="progress.html">progress</a></li>
+              <li><a href="help.html">HELP</a></li>
+          </ul>
+          <ul>
+              <li><a href="reading.html">Bluethenics</a></li>
+  
+          <!-- Popup Forms 
+<div id="form-popup" class="form-popup">
+  <div class="form-content" id="form-content">
+      <span class="close-btn" onclick="closeForm()">&times;</span>
+      
+      <form id="login-form" class="hidden">
+          <h2 class="L-S">Login</h2>
+          <label for="login-email">Email:</label>
+          <input type="email" id="login-email" required><br>
+          <label for="login-password">Password:</label>
+          <input type="password" id="login-password" required><br>
+          <button type="submit">Login</button>
+      </form>
+
+      <form id="signup-form" class="hidden">
+          <h2 class="L-S">Sign-Up</h2>
+          <label for="signup-name">Name:</label>
+          <input type="text" id="signup-name" required><br>
+          <label for="signup-email">Email:</label>
+          <input type="email" id="signup-email" required><br>
+          <label for="signup-password">Password:</label>
+          <input type="password" id="signup-password" required><br>
+          <button type="submit">Sign-Up</button>
+      </form>
+  </div>
+</div>-->
+
+
+
+
+
+
+              
+              <li class="hideOnMobile"><a href="index.html">home</a></li>
+              <li class="hideOnMobile"><a href="shop.html">shop</a></li>
+              <li class="hideOnMobile"><a href="progress.html">progress</a></li>
+              <li class="hideOnMobile"><a href="help.html">HELP</a></li>
+              <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+          </ul>
+      </nav>
+  </header>
+                        
+
+
+
+  
+
+
+
+                <div class="plange-img-div">
+                    <img src="top.jpg" class="plange-img">
+                    <div class="animated-text">Improve Yourself with Bluethenics</div>
+                </div>
+
+
+
+
+
+
+                <div id="specialOffer" class="img-info-pack">
+                  <h2>Limited Time Pack</h2>
+                  <button  onclick="location.href='limited-pack.html'"   class="limited-time-button" aria-label="Try the limited-time pack now">Try Now</button>
+                  <p>This pack will only be available for 24 hours.</p>
+                </div>
+                
+
+
+
+
+
+
+
+
+                
+                <div class="img-info">
+                    <h2>Bluethenics ?</h2>
+                    <p>At Bluethenics, we're on a mission to inspire a shift in mindset. Our goal is 
+                        to help people break free from habits of laziness and unhealthy routines, guiding them towards 
+                        lives that are disciplined, active, and fulfilling. Studies consistently show that regular
+                        exercise and a balanced diet are key to living longer and feeling better—and we’re here to make 
+                        that lifestyle accessible to everyone.<br>
+                        Whether you're looking to start your fitness journey or need support 
+                        staying on track, Bluethenics is your partner in building a healthier, 
+                        more disciplined future. Join us and discover a community dedicated to helping you 
+                        unlock your full potential, one step at a time  
+                    </p>
+                </div>
+
+
+
+
+
+                
+                  <button  class="glow-button"  onclick="location.href='daily-update.html'">fill the daily activity form</button>
+                  
+
+
+
+
+
+
+                
+                <!-- Navigation Buttons -->
+                <div class="index-nav-button">
+                    <button onclick="location.href='progress.html'" class="glow-button" >
+                        
+                        <span>Track Progress</span>
+                    </button>
+                    <button onclick="location.href='shop.html'" class="glow-button" >
+                        
+                        <span>Enter Shop</span>
+                    </button>
+                </div>
+                
+                <div class="img-info">
+                    <h2>Production</h2>
+                    <p>At Bluethenics, our products and services are crafted with care, backed by our 
+                        own experiences and extensive research. We believe in sharing only the best,
+                        most accurate information to support your journey towards a healthier lifestyle. 
+                        With our team’s dedication to thorough research and firsthand knowledge, we confidently
+                        stand behind the quality and effectiveness of everything we offer. We’re proud to 
+                        provide products and services you can trust, designed to help you achieve real results.
+                    </p>
+                </div>
+                
+                <div>
+                    <img src="brain-photo.jpg" class="img-info">
+                </div>
+                
+                <div class="about-us-v3">
+                    <div class="about-us">
+                        <img onclick="location.href='reading.html'" src="header-logo.jpg" class="about-us-logo">
+                        <div class="about-us-v2">
+                            <h2>About Us</h2>
+                            <p>Our business is currently located in India.<br><br>
+                            We are working to improve and build a stronger, healthier community.<br><br>
+                            Providing our products and creating special programs to improve<br><br>
+                            both mental and physical health.</p>
+                        </div>
+                    </div>
+                </div>
+                <footer>
+                    <div class="footer-div">
+                        <p>Bluethenics.Official</p>
+                        <p>Official release 1 December</p>
+                        <p>The best self-improvement Organization</p>
+                    </div>
+                </footer>
+                
+
+
+
+
+
+
+                
+
+                
+                <script>
+                    function showSidebar(){
+                        const sidebar=document.querySelector('.sidebar')
+                        sidebar.style.display = 'flex'
+                    }
+                    function hideSidebar(){
+                        const sidebar=document.querySelector('.sidebar')
+                        sidebar.style.display = 'none'
+                    }
+                   
+                </script>
+
+
+<script>
+                       //function openForm(formType) {
+   // document.getElementById('form-popup').style.display = 'block';
+
+    // Hide both forms first
+   // document.getElementById('login-form').classList.add('hidden');
+   // document.getElementById('signup-form').classList.add('hidden');
+
+    // Show the selected form
+   // if (formType === 'login') {
+    //    document.getElementById('login-form').classList.remove('hidden');
+   // } else if (formType === 'signup') {
+   //     document.getElementById('signup-form').classList.remove('hidden');
+   /// }
+//}
+
+//function closeForm() {
+ //   document.getElementById('form-popup').style.display = 'none';
+//}
+
+
+</script>
+
+    </body>
+</html>
+
+

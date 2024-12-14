@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>bluethenics</title>
+    <style>
+        body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #000000, #bdc3c7);
+    color: #fff;
+    text-align: left; /* Ensure left alignment */
+}
+
+section {
+    padding: 20px;
+    margin: 20px auto;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+    max-width: 800px;
+    text-align: left; /* Left-align content inside the section */
+}
+        h1, h2, h3 {
+            color: #ffcc00;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 40px;
+        }
+        p, li {
+            line-height: 1.8;
+        }
+        /* Disable text selection and copying */
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        /* Disable right-click */
+        body {
+            pointer-events: auto;
+        }
+        nav, .sidebar, .menu-button {
+    pointer-events: auto; /* Ensure sidebar and menu buttons are clickable */
+}
+        section * {
+            pointer-events: auto;
+        }
+        /* Watermark for screenshot discouragement */
+        body::before {
+            content: 'Pboxer Ebook';
+            position: fixed;
+            bottom: 10%;
+            right: 5%;
+            font-size: 5em;
+            color: rgba(255, 255, 255, 0.1);
+            transform: rotate(-30deg);
+            z-index: -1;
+        }
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+            .sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    z-index: 100;
+}
+
+@media (max-width: 768px) {
+    .hideOnMobile {
+        display: none;
+    }
+}
+@media (min-width: 769px) {
+    .sidebar {
+        display: none;
+    }
+}
+
+    </style>
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+    </script>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <nav>
+            <ul class="sidebar">
+                <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <li><a href="index.html">home</a></li>
+                <li><a href="shop.html">shop</a></li>
+                <li><a href="progress.html">progress</a></li>
+                <li><a href="help.html">HELP</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Bluethenics</a></li>
+                <li class="hideOnMobile"><a href="index.html">HOME</a></li>
+                <li class="hideOnMobile"><a href="shop.html">SHOP</a></li>
+                <li class="hideOnMobile"><a href="progress.html">PROGRESS</a></li>
+                <li class="hideOnMobile"><a href="help.html">HELP</a></li>
+                <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Introduction</h1>
+        <p>Pboxer is an ebook we created with one goal in mind: to help you learn how to defend yourself 
+            and keep your loved ones safe. We believe that boxing is more than just a sport—it’s a powerful
+             tool for self-defense and personal growth.</p>
+        <p>But boxing isn’t just about throwing punches. It’s about building your body and mind to handle
+             tough situations. To get good at it, you need more than just strength. You need stamina to keep
+             going, reaction speed to move quickly, power to make your punches count, agility to stay light 
+             on your feet, and flexibility to avoid injuries and move freely.</p>
+        <p>In Pboxer, we break it all down into simple, practical sections:</p>
+        <ul>
+            <li>Stamina</li>
+            <li>Power</li>
+            <li>Flexibility</li>
+            <li>Agility</li>
+            <li>Strength</li>
+            <li>Endurance</li>
+            <li>Speed</li>
+        </ul>
+        <p>(Preferred to get a nutrition ebook if you do not know what and how much you should eat.)</p>
+    </section>
+
+    <section>
+        <h2>Speed & Strength</h2>
+        <p>Speed and strength are two essential attributes that every 
+            fighter should possess. These qualities not only determine 
+            your physical performance but also significantly influence
+             the outcome of any combat situation.</p>
+        <h3>Speed</h3>
+        <p>Speed is crucial because it allows you to move quickly
+            and decisively. In a fight, speed can be the difference
+             between landing a punch and missing an opportunity. 
+             Being fast enables you to close the distance between
+             you and your opponent, catching them off guard before
+              they have time to react. A sudden burst of speed can 
+              help you deliver a powerful strike or evade an incoming
+               attack, giving you the upper hand in a confrontation.
+              On the other hand.
+              </p>
+              <h3>strength</h3>
+              <p> strength provides the power behind your punches.
+                 Even if you land a hit, it won’t be effective without 
+                 enough force behind it. Strength allows you to deliver
+                  punches that are not only fast but also impactful,
+                   capable of stunning or even knocking out your opponent.
+                    As you progress through this ebook, you will learn
+                     various techniques and exercises to build the strength
+                      necessary for delivering explosive punches and 
+                      dominating in a fight.<br>
+                By developing both speed and strength, you'll
+                 become a more well-rounded fighter, able to outmaneuver
+                  your opponents and strike with force when the opportunity
+                   arises.
+                </p>
+
+        <p><strong>Exercises to Increase Speed and strength</strong></p>
+        <p> To increase speed it shall be done by training the movements
+             that you ant to use in a fight in boxing these are punches
+             ,hook,uppercut,jab,etc
+        </p>
+        <ul>
+            <li>Double punches - you should two time at your max speed
+                 and wait for 0.5 seconds and do it again this should
+                 be done to 5 sets to 30 reps (counting as two punches
+                  for one)
+            </li>
+            <p> this exercise you should perform all the other exercises to the maximum speed 
+            </p>
+
+            <P>
+                Eg:- jab,cross,,uppercut, hook,body punch,etc<br>
+
+You can also train with combinations which you can make or use the suggested combo
+
+            </P>
+            <li>Jab, Cross</li>
+            <li>Jab, Cross, Hook</li>
+            <li>Jab, Hook, Cross</li>
+        </ul>
+
+        <h3>Strength</h3>
+        <p>To increase strength, you should focus on lifting more 
+            weight with fewer reps and longer rest periods.<br>
+            But consistency is the key <br>
+
+            To increase strength rest and high intensity workouts are very important 
+            (consider going to gym )
+            If you don't do to gym you can do these instead
+            </p>
+        <p><strong>Exercises to Increase Strength:</strong></p>
+        <ul>
+            <li>Weighted Pushups</li>
+            <li>Weighted Squats</li>
+            <li>Diamond Pushups</li>
+            <li>Pull-ups</li>
+            <li>Heavy Weight Lifting</li>
+            <li>pistol Squats</li>
+            <li>sissy squats</li>
+            <li>archer push up</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Stamina & Power</h2>
+        <p>Stamina & power is one of the most important 
+            things things that you should have in boxing 
+            while we fight and we uses the our all to fight
+             the opponent we run out of stamina fast so to 
+             last longer you should increase you stamina.
+              Power we use the power to hurt the opponent 
+              if you don't have that build up it will be
+               like punching in an iron surface.
+        </p>
+        <h3>Stamina:</h3>
+        <p>You can easily increase your stamina by
+             putting your heart to beat up fast by 
+             doing exercises these exercises are
+             known as aerobic exercises<br>
+             Stamina is essential because boxing
+              is an intense, high-energy sport 
+              that demands constant movement,
+               quick reactions, and relentless effort.
+                When you step into the ring, you’re not
+                 just throwing punches—you’re dodging, 
+                 blocking, and constantly strategizing. 
+                 All of this can quickly drain your energy.
+                  Without sufficient stamina, you'll find 
+                  yourself exhausted in the later rounds,
+                   making it difficult to keep up with your
+                   opponent. To last longer in a fight and
+                    maintain your performance from start to
+                     finish, it's crucial to train your cardiovascular
+                      endurance and build the stamina needed to outlast 
+                      your rival.
+             
+             
+             </p>
+             <p><strong>Examples of aerobic exercise</strong></p>
+             <h3>hopw to increase</h3>
+        <ul>
+            <li>Running</li>
+            <li>Cycling</li>
+            <li>Jump Rope</li>
+            <li>Swimming</li>
+            <li>High-Intensity Training</li>
+        </ul>
+        <P>One of the main things to increase stamina 
+            is that you should be consistent. The consistency
+             is the key for building stamina</P>
+             <p>You should do these every day preferably morning </p>
+
+             <h3>Power</h3>
+             <P>
+                  power is what gives your punches their impact. A punch
+                   without power is like hitting an iron surface—it may 
+                   make contact, but it won't cause any significant damage.
+                    Power is what allows you to break through your opponent
+                    's defenses, force them to retreat, or even knock them 
+                    out. Without it, your punches may be fast and frequent
+                     but ineffective. Developing power involves building 
+                     strength, speed, and proper technique to deliver
+                      explosive, forceful strikes that can wear down 
+                      your opponent and shift the fight in your favor.
+In boxing, a perfect balance of stamina and power ensures that you can 
+keep up the intensity of the fight while delivering punches that count.
+ As you progress through this ebook, you will learn how to increase both 
+ your stamina and power, giving you the tools to become a more formidable 
+ and well-rounded fighter.
+
+            </P>
+
+        <h3>Power-Building Exercises:</h3>
+        <ul>
+            Plyometric Training:
+
+            <li>Box Jumps: 3 sets of 10 reps</li>
+            <li>Broad Jumps: 3 sets of 8 reps</li>
+            <li>Clap Push-Ups: 3 sets of 8-10 reps</li>
+            <li>Medicine Ball Slams: 3 sets of 12 reps</li>
+            </ul>
+
+            <ul>
+                Olympic Lifting:
+    
+                <li>Power Cleans: 3 sets of 4-6 reps
+                </li>
+                <li>Snatches: 3 sets of 4-6 reps</li>
+                
+                </ul>
+
+                <ul>
+                    Sprint Training:
+        
+                    <li>Flat Sprints: 6-8 sets of 30-50 meters
+                    </li>
+                    <li>Hill Sprints: 6-8 sets of 20-30 meters</li>
+                    
+                    </ul>
+
+                    <ul>
+                        Plyometric Training:
+            
+                        <li>Box Jumps: 3 sets of 10 reps</li>
+                        <li>Broad Jumps: 3 sets of 8 reps</li>
+                        <li>Clap Push-Ups: 3 sets of 8-10 reps</li>
+                        <li>Medicine Ball Slams: 3 sets of 12 reps</li>
+                        </ul>
+
+                        <ul>
+                            Explosive Bodyweight Exercises:
+                
+                            <li>Jump Squats: 3 sets of 10-12 reps</li>
+                            <li>Burpees: 3 sets of 10-12 reps</li>
+                            <li>explosive pushup 3 sets of 15 reps </li>
+                            
+                            </ul>
+
+                            <ul>
+                                Resistance Band Exercises:
+                    
+                               <li>Band-Assisted Push-Ups: 3 sets of 8-10 reps</li>
+                               <li>Band-Resisted Sprints: 3 sets of 15-second sprints
+                            </li>
+                                </ul>
+
+                                <ul>
+                                    Core Training:
+                        
+                                    <li>Plank with Shoulder Taps: 3 sets of 20 reps
+                                    </li>
+                                    <li>Russian Twists: 3 sets of 20 reps
+                                    </li>
+                                    <li>Hanging Leg Raises: 3 sets of 10-12 reps
+                                </li>
+                                    
+                                    </ul>
+                                    <p>By consistently following this program and progressively
+                                         increasing the intensity, you’ll build explosive power
+                                          that improves both athletic performance and functional
+                                           strength.
+                                       <br> If this felt like easy for you can increase reps 
+                                       </p>
+       
+
+    </section>
+
+    <section>
+        <h2>Flexibility, Agility & Endurance</h2>
+        <h3>flexibility</h3>
+        <p>
+            Flexibility refers to the range of motion (ROM) of your joints and muscles. In boxing, flexibility is important for:
+<br>Improved Technique: Allows boxers to achieve better form, especially for punches like hooks and uppercuts, which require a wide range of motion.
+<br>Enhanced Defense: Enables smooth head and body movement to evade punches.
+<br>Injury Prevention: Reduces the risk of muscle strains and joint injuries, especially in the shoulders, hips, and spine.
+<br>Efficient Power Generation: A flexible body can rotate more efficiently, translating into more powerful punches through improved rhythm
+        </p>
+        
+        <h3>Exercises for Flexibility:</h3>
+        <ul>
+            <li>Dynamic Stretches (Leg Swings, Arm Circles)</li>
+            <li>Static Stretches (Hamstring Stretch, Hip Flexor Stretch)</li>
+            <li>Yoga or Pilates</li>
+        </ul>
+        <h3>Endurance</h3>
+        <p>Endurance is the ability to sustain physical activity over time. In boxing 
+           <br>Maintaining Stamina: Boxing rounds can be physically taxing, requiring both aerobic (long-term) and anaerobic (short bursts) endurance.
+          <br> Consistent Performance: Helps you maintain strength, speed, and focus throughout the match without fatigue affecting your  technique.
+            <br>Improved Recovery: Better endurance leads to quicker recovery between rounds and training sessions.
+            <br>
+            <br>
+            Types of Endurance:
+            <br>
+            Cardiovascular Endurance: Keeps the heart and lungs functioning efficiently (e.g., running, cycling, skipping).
+           <br>Muscular Endurance: Ensures muscles can perform repetitive actions like punching without fatigue (e.g., circuit training, bodyweight exercises).
+            <br>Pain Endurance: Makin you able to endure enough pain while fighting </p>
+        <h3>How to Increase Endurance:</h3>
+        <ul>
+            <li>Cardiovascular Endurance & Muscular Endurance: you can improve this by increasing your stamina and mental toughness</li>
+
+            <li>Pain Endurance: you can increase this by enduring pain from fights or gaining experience in fighting (best to have a partner for fighting)</li>
+        </ul>
+        <p>If you don't have a partner you can just hit yourself but its not recommended 
+        </p>
+    </section>
+
+    <section>
+        <h2>Basic Boxing Routine</h2>
+        <ul>
+            <li>Monday: Upper Body, Cardio</li>
+            <li>Tuesday: Middle Body, Cardio</li>
+            <li>Wednesday: Lower Body</li>
+            <li>Thursday: Upper Body, Cardio</li>
+            <li>Friday: Middle Body, Cardio</li>
+            <li>Saturday: Lower Body</li>
+            <li>Sunday: Rest</li>
+        </ul>
+
+        
+    </section>
+
+
+    <script>
+        function showSidebar(){
+            const sidebar=document.querySelector('.sidebar')
+            sidebar.style.display = 'flex'
+        }
+        function hideSidebar(){
+            const sidebar=document.querySelector('.sidebar')
+            sidebar.style.display = 'none'
+        }
+    </script>
+
+
+
+</div>
+</body>
+</html>

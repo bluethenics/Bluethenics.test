@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+        <head>
+            <meta charset="UFT-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <link rel="stylesheet" href="style.css">
+            <title>bluethenics</title>
+            
+
+            
+    <style>
+        /* Container for all buttons */
+        button {
+            background-color: #4CAF50; /* Green background */
+            color: white; /* White text */
+            padding: 12px 24px; /* Spacing inside the button */
+            font-size: 16px; /* Text size */
+            border: none; /* Remove borders */
+            border-radius: 8px; /* Rounded corners */
+            cursor: pointer; /* Change cursor on hover */
+            transition: all 0.3s ease-in-out; /* Smooth transition for effects */
+            text-align: center; /* Center the text */
+            display: inline-block; /* Align buttons inline */
+            margin: 10px; /* Space between buttons */
+        }
+
+        /* Hover effect for buttons */
+        button:hover {
+            background-color: #45a049; /* Darker green on hover */
+            transform: scale(1.05); /* Slightly enlarge the button */
+        }
+
+        /* Focused button effect (on tab focus) */
+        button:focus {
+            outline: none; /* Remove default focus outline */
+            box-shadow: 0 0 10px rgba(0, 128, 0, 0.5); /* Green glow on focus */
+        }
+
+        /* Styling for buttons specifically inside a div with class 'heading-of-progress' */
+        .heading-of-progress button {
+            background-color: #007BFF; /* Blue background for section-specific buttons */
+            font-weight: bold; /* Make text bold */
+        }
+
+        .heading-of-progress button:hover {
+            background-color: #0056b3; /* Darker blue for hover */
+        }
+
+        /* Responsive button styles */
+        @media (max-width: 768px) {
+            button {
+                padding: 10px 20px; /* Smaller padding on mobile */
+                font-size: 14px; /* Slightly smaller text on mobile */
+            }
+        }
+    </style>
+
+
+
+
+
+        </head>
+        <body>
+            <div class="wrapper">
+                <header>
+                    <nav>
+                        <ul class="sidebar">
+                            <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                            <li><a href="index.html">HOME</a></li>
+                            <li><a href="shop.html">SHOP</a></li>
+                            <li><a href="progress.html">PROGRESS</a></li>
+                            <li><a href="help.html">HELP</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Bluethenics</a></li>
+                            <li class="hideOnMobile"><a href="index.html">home</a></li>
+                            <li class="hideOnMobile"><a href="shop.html">shop</a></li>
+                            <li class="hideOnMobile"><a href="progress.html">progress</a></li>
+                            <li class="hideOnMobile"><a href="help.html">HELP</a></li>
+                            <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+                        </ul>
+                    </nav>
+                </header>
+
+                <div id="barContainer">
+                    <div id="bar" style="width: 0%;"></div>
+                </div>
+
+                
+
+                <canvas id="progressChart" width="400" height="400"></canvas>
+
+                <div class="typing-section" id="sectionA">
+                <div>
+
+                    <div class="heading-of-progress">
+                        
+                        <h2>A</h2>
+                        <button onclick="scrollToSection('sectionB')">GO TO B</button>
+                        <button onclick="scrollToSection('sectionC')">GO TO C</button>
+                        <span class="tooltip-icon" data-tooltip="Enter your first priority activities that you are going to do in this day in 'A' section .">?</span>
+                    </div>
+                    
+                    <div>
+                        <input type="text">
+                        <input type="time">
+                        <input type="checkbox" value="yes" class="tick">
+                        
+                    </div>
+                    <div>
+                        <input type="text">
+                        <input type="time">
+                        <input type="checkbox" value="yes" class="tick">
+                        
+                    </div>
+                    <div>
+                        <input type="text">
+                        <input type="time">
+                        <input type="checkbox" value="yes" class="tick">
+                       
+                    </div>
+                    <div>
+                        <input type="text">
+                        <input type="time">
+                        <input type="checkbox" value="yes" class="tick">
+                        
+                    </div>
+                    <div>
+                        <input type="text">
+                        <input type="time">
+                        <input type="checkbox" value="yes" class="tick">
+                       
+                    </div>
+                    <div>
+                        <input type="text">
+                        <input type="time">
+                        <input type="checkbox" value="yes" class="tick">
+                        
+                    </div>
+                    <div>
+                        <input type="text">
+                        <input type="time">
+                        <input type="checkbox" value="yes" class="tick">
+                        
+                    </div>
+                    <div>
+                        <input type="text">
+                        <input type="time">
+                        <input type="checkbox" value="yes" class="tick">
+                        
+                    </div>
+                </div>
+                <div>
+                    <div class="heading-of-progress" id="sectionB">
+                        <h2>B</h2>
+                        <button onclick="scrollToSection('sectionA')">GO TO A</button>
+                    <span class="tooltip-icon" data-tooltip="Enter your second priority activities in 'B' section .">?</span>
+                    </div>
+                    <div>
+                        <input type="text">
+                        <input type="time">
+                        <input type="checkbox" value="yes" class="tick">
+                       
+                    </div>
+                    <div>
+                        <input type="text">
+                        <input type="time">
+                        <input type="checkbox" value="yes" class="tick">
+                        
+                    </div>
+                    <div>
+                        <input type="text">
+                        <input type="time">
+                        <input type="checkbox" value="yes" class="tick">
+                       
+                    </div>
+                    <div>
+                        <input type="text">
+                        <input type="time">
+                        <input type="checkbox" value="yes" class="tick">
+                        
+                    </div>
+                    <div>
+                        <input type="text">
+                        <input type="time">
+                        <input type="checkbox" value="yes" class="tick">
+                        
+                    </div>
+                    <div>
+                        <input type="text">
+                        <input type="time">
+                        <input type="checkbox" value="yes" class="tick">
+                        
+                    </div>
+                    <div>
+                        <input type="text">
+                        <input type="time">
+                        <input type="checkbox" value="yes" class="tick">
+                        
+                    </div>
+                    <div>
+                        <input type="text">
+                        <input type="time">
+                        <input type="checkbox" value="yes" class="tick">
+                        
+                    </div>
+                </div>
+                <div>
+                    <div class="heading-of-progress" id="sectionC">
+                        <h2>C</h2>
+                        <button onclick="scrollToSection('sectionA')">GO TO A</button>
+                    <span class="tooltip-icon" data-tooltip="Enter your last priority in 'C' section eg:- entertainment,regular activities,etc.">?</span>
+                    </div>
+                    <div>
+                        <input type="text">
+                        <input type="time">
+                        <input type="checkbox" value="yes" class="tick">
+                        
+                    </div>
+                    <div>
+                        <input type="text">
+                        <input type="time">
+                        <input type="checkbox" value="yes" class="tick">
+                        
+                    </div>
+                    <div>
+                        <input type="text">
+                        <input type="time">
+                        <input type="checkbox" value="yes" class="tick">
+                    </div>
+                    <div>
+                        <input type="text">
+                        <input type="time">
+                        <input type="checkbox" value="yes" class="tick">
+                    </div>
+                    <div>
+                        <input type="text">
+                        <input type="time">
+                        <input type="checkbox" value="yes" class="tick">
+                    </div>
+                    <div>
+                        <input type="text">
+                        <input type="time">
+                        <input type="checkbox" value="yes" class="tick">
+                        
+                    </div>
+                    <div>
+                        <input type="text">
+                        <input type="time">
+                        <input type="checkbox" value="yes" class="tick">
+                        
+                    </div>
+                    <div>
+                        <input type="text">
+                        <input type="time">
+                        <input type="checkbox" value="yes" class="tick">
+                        
+                    </div>
+                </div>
+            </div>
+
+
+
+                
+                <script>
+                    function showSidebar(){
+                        const sidebar=document.querySelector('.sidebar')
+                        sidebar.style.display = 'flex'
+                    }
+                    function hideSidebar(){
+                        const sidebar=document.querySelector('.sidebar')
+                        sidebar.style.display = 'none'
+                    }
+                </script>
+                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                <script src="main.js"></script>
+                </div>
+                </body>
+                </html>

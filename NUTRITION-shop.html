@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+        <head>
+            <meta charset="UFT-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <link rel="stylesheet" href="style.css">
+            <title>bluethenics</title>
+        </head>
+        <body>
+            <div class="wrapper">
+                <header>
+                    <nav>
+                        <ul class="sidebar">
+                            <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                            <li><a href="index.html">home</a></li>
+                            <li><a href="shop.html">shop</a></li>
+                            <li><a href="progress.html">progress</a></li>
+                            <li><a href="help.html">HELP</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Bluethenics</a></li>
+                            <li class="hideOnMobile"><a href="index.html">home</a></li>
+                            <li class="hideOnMobile"><a href="shop.html">shop</a></li>
+                            <li class="hideOnMobile"><a href="progress.html">progress</a></li>
+                            <li class="hideOnMobile"><a href="help.html">HELP</a></li>
+                            <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+                        </ul>
+                    </nav>
+                </header>
+
+
+
+                <section class="product-section">
+                    <article class="product-image">
+                        <img src="nutrition.jpg" alt="Redro eBook" class="product-image-img">
+                    </article>
+                
+                    <div class="product-details">
+                        <div class="product-price">
+                            <h3>Price: ₹39</h3>
+                        </div>
+                
+                        <div class="product-title">
+                            <h2>nutrition</h2>
+                        </div>
+                
+                        <div class="product-description">
+                            <p>Without clear nutrition tracking and knowing how much you should eat,
+                                 reaching your fitness goals can be challenging. Our Nutrition eBook provides
+                                  all the essential information on balanced nutrition, portion control, and effective
+                                   tracking methods, helping you optimize your diet and make progress faster. Whether 
+                                   your goal is to build muscle, lose weight, or simply eat healthier, this eBook will 
+                                   equip you with the tools and knowledge to fuel your journey effectively.
+                                 Let us help you get on the fast track to success!<p>
+                        </div>
+                
+                        <div class="purchase-button">
+                            <button onclick="location.href='payment.html'" class="buy-now-btn">
+                                <img src="buy-now button.jpg" alt="Buy Now">
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+
+
+
+                <script>
+                    function showSidebar(){
+                        const sidebar=document.querySelector('.sidebar')
+                        sidebar.style.display = 'flex'
+                    }
+                    function hideSidebar(){
+                        const sidebar=document.querySelector('.sidebar')
+                        sidebar.style.display = 'none'
+                    }
+                </script>
+                </div>
+                </body>
+                </html>

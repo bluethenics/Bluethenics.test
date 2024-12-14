@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+        <head>
+            <meta charset="UFT-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <link rel="stylesheet" href="style.css">
+            <title>bluethenics</title>
+        </head>
+        <body>
+            <div class="wrapper">
+                <header>
+                    <nav>
+                        <ul class="sidebar">
+                            <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                            <li><a href="index.html">HOME</a></li>
+                            <li><a href="shop.html">SHOP</a></li>
+                            <li><a href="progress.html">PROGRESS</a></li>
+                            <li><a href="help.html">HELP</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="reading.html"><img src="header-logo.jpg" class="header-logo"></a></li>
+
+                            
+
+
+                            <li class="hideOnMobile"><a href="index.html">home</a></li>
+                            <li class="hideOnMobile"><a href="shop.html">shop</a></li>
+                            <li class="hideOnMobile"><a href="progress.html">progress</a></li>
+                            <li class="hideOnMobile"><a href="help.html">HELP</a></li>
+                            <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+                        </ul>
+                    </nav>
+                </header>
+
+
+
+                <div class="reading-container">
+                    <div class="reading-div">
+                        <h2 class="reading-title">Redro</h2>
+                        <button  id="openTabBtn" class="read-button" onclick="location.href='https://drive.google.com/file/d/1Q8eBF13mNe_EGax1yV5B6o_HCkrcK4DX/view?usp=drivesdk'">Read</button>
+                    </div>
+                    <div class="reading-div">
+                        <h2 class="reading-title">CUMMUNICATION</h2>
+                        <button class="read-button" onclick="location.href='https://drive.google.com/file/d/1sbUEee1tfE1PnzzQQNU5O-tfHQqQApAJ/view?usp=drivesdk'">Read</button>
+                    </div>
+                    <div class="reading-div">
+                        <h2 class="reading-title">6.2 METHODS</h2>
+                        <button class="read-button" onclick="location.href='https://drive.google.com/file/d/1rSsgTxROvzuCtYLMuxoveli_rn6VxDOm/view?usp=drivesdk'">Read</button>
+                    </div>
+                    <div class="reading-div">
+                        <h2 class="reading-title">MIND</h2>
+                        <button class="read-button" onclick="location.href='https://drive.google.com/file/d/1ztSOnTcbDFPajlXqN293zkEHtnSDhbwm/view?usp=drivesdk'">Read</button>
+                    </div>
+                    <div class="reading-div">
+                        <h2 class="reading-title">TESTOTSERONE</h2>
+                        <button class="read-button" onclick="location.href='https://drive.google.com/file/d/1r7z6dRn3APnfiYA8swCj_EQ5pIlZyvqP/view?usp=drivesdk'">Read</button>
+                    </div>
+                    <div class="reading-div">
+                        <h2 class="reading-title">LAZYNESS</h2>
+                        <button class="read-button" onclick="location.href='https://drive.google.com/file/d/1n85aApLbQf-oo_DDTFmqBhL3Om9Cvv7f/view?usp=drivesdk'">Read</button>
+                    </div>
+                    <div class="reading-div">
+                        <h2 class="reading-title">NUTRITION</h2>
+                        <button class="read-button" onclick="location.href='https://drive.google.com/file/d/1BDRccEtvgINvnAO96NNteGUaVVtP5FQw/view?usp=drivesdk'">Read</button>
+                    </div>
+                    <div class="reading-div">
+                        <h2 class="reading-title">PROTEIN SHAKE RECIPES</h2>
+                        <button class="read-button" onclick="location.href='protein-shake.pdf'">Read</button>
+                    </div>
+                    <div class="reading-div">
+                        <h2 class="reading-title">PBOXER</h2>
+                        <button class="read-button" onclick="location.href='https://docs.google.com/document/d/15IlK1crAXphhNMKKyhpbbpyUECefWlUSxFUIXl6UnOQ/edit?usp=drive_link'">Read</button>
+                    </div>
+                    <div class="reading-div">
+                        <h2 class="reading-title">TITANIC STRENGTH</h2>
+                        <button class="read-button" onclick="location.href='https://docs.google.com/document/d/1vqX_ZM61Puxhgs3KXh_cEneaviRuKHftyMvaugRYt5k/edit?usp=drive_link'">Read</button>
+                    </div>
+                    <!-- Add more as needed -->
+                </div>
+                
+
+
+
+
+
+                <script>
+                    function showSidebar(){
+                        const sidebar=document.querySelector('.sidebar')
+                        sidebar.style.display = 'flex'
+                    }
+                    function hideSidebar(){
+                        const sidebar=document.querySelector('.sidebar')
+                        sidebar.style.display = 'none'
+                    }
+                </script>
+                </div>
+                </body>
+                </html>

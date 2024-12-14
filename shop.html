@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+        <head>
+            <meta charset="UFT-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <link rel="stylesheet" href="style.css">
+            <title>bluethenics</title>
+        </head>
+        <body>
+            <div class="wrapper">
+                <header>
+                    <nav>
+                        <ul class="sidebar">
+                            <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                            <li><a href="index.html">HOME</a></li>
+                            <li><a href="shop.html">SHOP</a></li>
+                            <li><a href="progress.html">PROGRESS</a></li>
+                            <li><a href="help.html">HELP</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Bluethenics</a></li>
+                            <li class="hideOnMobile"><a href="index.html">home</a></li>
+                            <li class="hideOnMobile"><a href="shop.html">shop</a></li>
+                            <li class="hideOnMobile"><a href="progress.html">progress</a></li>
+                            <li class="hideOnMobile"><a href="help.html">HELP</a></li>
+                            <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+                        </ul>
+                    </nav>
+                </header>
+
+
+                
+
+
+                 <!-- Search Bar -->
+                 <div class="search-bar-container">
+                    <input type="text" id="search-bar" placeholder="Search..." onkeyup="filterOptions()">
+                    <div id="search-results" class="search-results"></div>
+                </div>
+                
+
+        <div class="shop-grid">
+            <button onclick="location.href='redro-shop.html'" class="shop-button">
+                <img src="redro.jpg" alt="REDRO">
+                <p>REDRO</p>
+            </button>
+            <button onclick="location.href='communication-shop.html'" class="shop-button">
+                <img src="communication.png" alt="COMMUNICATION">
+                <p>COMMUNICATION</p>
+            </button>
+            <button onclick="location.href='height-shop.html'" class="shop-button">
+                <img src="height-boost.jpg" alt="HEIGHT-BOOST">
+                <p>HEIGHT-BOOST</p>
+            </button>
+            <button onclick="location.href='mind-shop.html'" class="shop-button">
+                <img src="mind.jpg" alt="MIND">
+                <p>MIND</p>
+            </button>
+            <button onclick="location.href='testosterone-shop.html'" class="shop-button">
+                <img src="testosterone.jpg" alt="TESTOSTERONE">
+                <p>TESTOSTERONE</p>
+            </button>
+            <button onclick="location.href='get-out-of-R-and-L-shop.html'" class="shop-button">
+                <img src="getridoflazyless.jpg" alt="GET RID OF L&R">
+                <p>GET RID OF L&R</p>
+            </button>
+            <button onclick="location.href='NUTRITION-shop.html'" class="shop-button">
+                <img src="nutrition.jpg" alt="NUTRITION">
+                <p>NUTRITION</p>
+            </button>
+            <button onclick="location.href='protein-shop.html'" class="shop-button">
+                <img src="proteinshake.jpg" alt="PROTEIN SHAKE RECIPES">
+                <p>PROTEIN SHAKE RECIPES</p>
+            </button>
+            <button onclick="location.href='pboxer.html'" class="shop-button">
+                <img src="PBOXER.jpg" alt="PBOXER">
+                <p>PROTEIN SHAKE RECIPES</p>
+            </button>
+            <button onclick="location.href='titanic-strength.html'" class="shop-button">
+                <img src="TITANIC STRENGTH-IMG.png" alt="TITANIC STRENGTH">
+                <p>TITANIC STRENGTH</p>
+            </button>
+        </div>
+                
+
+
+
+                
+                <script>
+                    function showSidebar(){
+                        const sidebar=document.querySelector('.sidebar')
+                        sidebar.style.display = 'flex'
+                    }
+                    function hideSidebar(){
+                        const sidebar=document.querySelector('.sidebar')
+                        sidebar.style.display = 'none'
+                    }
+                
+                
+
+                // Search Functionality
+                const shopItems = [
+                    { name: 'REDRO', path: 'redro-shop.html' },
+                    { name: 'COMMUNICATION', path: 'communication-shop.html' },
+                    { name: 'HEIGHT-BOOST', path: 'height-shop.html' },
+                    { name: 'MIND', path: 'mind-shop.html' },
+                    { name: 'TESTOSTERONE', path: 'testosterone-shop.html' },
+                    { name: 'GET RID OF L&R', path: 'get-out-of-R-and-L-shop.html' },
+                    { name: 'NUTRITION', path: 'NUTRITION-shop.html' },
+                    { name: 'PROTEIN SHAKE RECIPES', path: 'protein-shop.html' },
+                    { name: 'PBOXER', path: 'pboxer.html' },
+                    { name: 'TITANIC STRENGTH', path: 'titanic-strength.html' }
+                ];
+    
+                function filterOptions() {
+                    const query = document.getElementById('search-bar').value.toLowerCase();
+                    const resultsDiv = document.getElementById('search-results');
+                    resultsDiv.innerHTML = ''; // Clear previous results
+    
+                    if (query) {
+                        const matches = shopItems.filter(item => item.name.toLowerCase().includes(query));
+    
+                        matches.forEach(item => {
+                            const result = document.createElement('div');
+                            result.className = 'search-result';
+                            result.textContent = item.name;
+                            result.onclick = () => (location.href = item.path);
+                            resultsDiv.appendChild(result);
+                        });
+                    }
+                }
+            </script>
+
+
+
+
+
+
+                </div>
+                </body>
+                </html>

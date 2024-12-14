@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+        <head>
+            <meta charset="UFT-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <link rel="stylesheet" href="style.css">
+            <title>bluethenics</title>
+        </head>
+
+        <body>
+            <div class="wrapper">
+                <header>
+                    <nav>
+                        <ul class="sidebar">
+                            <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                            <li><a href="index.html">HOME</a></li>
+                            <li><a href="shop.html">SHOP</a></li>
+                            <li><a href="progress.html">PROGRESS</a></li>
+                            <li><a href="help.html">HELP</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="reading.html"><img src="header-logo.jpg" class="header-logo"></a></li>
+
+                            
+
+
+                            <li class="hideOnMobile"><a href="index.html">home</a></li>
+                            <li class="hideOnMobile"><a href="shop.html">shop</a></li>
+                            <li class="hideOnMobile"><a href="progress.html">progress</a></li>
+                            <li class="hideOnMobile"><a href="help.html">HELP</a></li>
+                            <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+                        </ul>
+                    </nav>
+                </header>
+
+                <div class="img-info-pack">
+
+                    <img src="TITANIC STRENGTH-IMG.png" class="pro-img">
+                    <img src="redro.jpg" class="pro-img">
+                    <img src="testosterone.jpg" class="pro-img">
+<div class="product-price">
+                    <h3>PRICE:  ₹144 </h3>
+                </div>
+                <button  onclick="location.href='payment.html'" class="order">order</button>
+                    <p>These three eBooks are essential for self-development due to their unique benefits:
+
+                        <br> <br> Redro: This eBook focuses on providing mental peace by offering strategies to calm the mind, reduce stress, and improve overall emotional well-being. Achieving peace of mind is crucial for maintaining focus and achieving personal goals.
+                        
+                        <br> <br>Testosterone Mind Power: This guide helps enhance mental power by boosting cognitive performance, memory, and concentration. It provides tips on maintaining optimal mental health and unlocking your brain's full potential.
+                        
+                        <br><br>Titanic Strength: This eBook is designed to improve physical strength through effective workout routines and strength-building strategies. Physical fitness plays a key role in boosting confidence, endurance, and overall productivity.
+                        
+                        <br><br>Together, these eBooks create a comprehensive self-development package that supports mental clarity, cognitive enhancement, and physical strength.
+                    </p>
+
+                </div>
+
+                
+                
+
+
+
+
+
+                <script>
+                    function showSidebar(){
+                        const sidebar=document.querySelector('.sidebar')
+                        sidebar.style.display = 'flex'
+                    }
+                    function hideSidebar(){
+                        const sidebar=document.querySelector('.sidebar')
+                        sidebar.style.display = 'none'
+                    }
+                </script>
+                </div>
+                </body>
+                </html>

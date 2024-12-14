@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Bluethenics</title>
+    <style>
+         body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: auto;
+    }
+
+    .wrapper {
+        width: 100%;
+        max-width: 1200px;
+        padding: 20px;
+    }
+
+    .journal-form {
+
+        width: 100%;
+        max-width: 500px; /* Limit size for larger screens */
+        margin: 0 auto; /* Center for all screen sizes */
+        box-sizing: border-box; /* Include padding in width */
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #8e44ad, #3498db);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+   
+    }
+    .date-day, .pro-mood, .progress-form {
+        flex-wrap: wrap; /* Allow wrapping on small screens */
+    }
+
+    /* Ensure the form and its content are centered */
+    .journal-form h2,
+    .journal-form h3 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .form-group2 div {
+        margin-bottom: 15px; /* Add spacing for stacked inputs */
+    }
+    .sidebar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px; /* Add padding for better usability */
+    }
+
+
+
+    .menu-button {
+        display: flex; /* Ensure menu button is visible */
+        justify-content: center;
+        align-items: center;
+    }
+
+    @media screen and (max-width: 400px) {
+        .journal-form {
+            padding: 10px; /* Reduce padding on smaller screens */
+        }
+
+        nav ul {
+            padding-left: 10px; /* Adjust padding for smaller screens */
+        }
+
+        .submit-button {
+            width: 100%; /* Full width for better tap targets */
+        }
+    }
+
+
+
+        .form-group, .form-group2, .form-group3 {
+            margin-bottom: 15px;
+        }
+        .form-group, .form-group2 div, .form-group3 {
+        width: 100%; /* Take full width on small screens */
+        max-width: none; /* Override set widths for flexibility */
+    }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="number"],
+        .form-group input[type="date"],
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group2, .form-group3 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: space-between;
+        }
+
+        .form-group2 div,
+        .form-group3 div {
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .submit-button {
+        background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient background */
+        color: white;
+        border: none;
+        border-radius: 50px; /* Rounded corners */
+        padding: 12px 20px; /* Padding for size */
+        font-size: 16px; /* Text size */
+        font-weight: bold; /* Bold text */
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+       
+    }
+
+    .submit-button:hover {
+        
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    }
+
+    .submit-button:active {
+        
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15); /* Softer shadow */
+    }
+
+        @media screen and (max-width: 600px) {
+            .journal-form {
+                width: 100%;
+                padding: 15px;
+            }
+
+            .form-group2,
+            .form-group3 {
+                flex-direction: column;
+            }
+
+            .form-group2 div,
+            .form-group3 div {
+                width: 100%;
+                min-width: auto;
+            }
+        }
+
+        /* Navigation Styles */
+nav {
+    background-color: white;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensure it spans the entire width */
+    padding: 10px 0; /* Add some padding for better spacing */
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start; /* Align links to the left */
+    align-items: center;
+    padding-left: 20px; /* Adds padding from the left edge */
+}
+
+nav li {
+    height: 50px;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 20px; /* Adjusted padding for better spacing */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+    font-weight: bold;
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+nav a:hover {
+    background-color: rgb(159, 159, 170);
+}
+
+nav li:first-child {
+    margin-right: auto; /* Align the first item to the left */
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.658);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0,0,0,0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar a {
+    width: 100%;
+}
+
+.menu-button {
+    display: none;
+}
+
+.header-logo {
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+@media(max-width: 800px) {
+    .hideOnMobile {
+        display: none;
+    }
+    .menu-button {
+        display: block;
+    }
+}
+
+@media(max-width: 400px) {
+    .sidebar {
+        width: 100%;
+    }
+}
+
+.date-day {
+    display: flex;
+    justify-content: space-between;
+}
+.pro-mood{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+/* Styling for the container */
+.pro-mood {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #8e44ad, #3498db);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for form groups */
+.form-group3 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 300px;
+    
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 5px;
+    
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Hover and focus effects */
+input:hover, input:focus {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+label:hover {
+    color: #f1c40f;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.progress-form {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.journal-form {
+    display: block; /* Ensure it's not hidden */
+    visibility: visible; /* Ensure it's visible */
+    position: relative; /* Ensure it is in a visible position */
+    overflow: auto; /* Ensure child elements are not clipped */
+}
+.journal-form {
+    border: 1px solid red;
+}
+
+    </style>
+</head>
+<body>
+
+
+  <div class="wrapper">
+    <header>
+        <nav>
+            <ul class="sidebar">
+                <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="shop.html">SHOP</a></li>
+                <li><a href="progress.html">PROGRESS</a></li>
+                <li><a href="help.html">HELP</a></li>
+            </ul>
+            <ul>
+                <li><a href="reading.html"><img src="header-logo.jpg" class="header-logo"></a></li>
+                <li class="hideOnMobile"><a href="index.html">home</a></li>
+                <li class="hideOnMobile"><a href="shop.html">shop</a></li>
+                <li class="hideOnMobile"><a href="progress.html">progress</a></li>
+                <li class="hideOnMobile"><a href="help.html">HELP</a></li>
+                <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+<div class="journal-form">
+    <h2>Daily-update</h2>
+    <form id="dailyJournalForm">
+        <div class="date-day">
+        <div class="form-group">
+            <label for="date">Date</label>
+            <input type="date" id="date" required>
+        </div>
+
+        <div class="form-group">
+            <label for="day">Day</label>
+            <input type="text" id="day" placeholder="Day #" required>
+        </div>
+    </div>
+
+        <h3>"Everything you’ve ever wanted is on the other side of fear" - George Addair</h3>
+        <div class="pro-mood">
+        <div class="form-group3">
+            <label for="productivity">Productivity (1-10)</label>
+            <input type="number" id="productivity" min="1" max="10" required>
+        </div>
+
+        <div class="form-group3">
+            <label for="mood">Mood (1-10)</label>
+            <input type="number" id="mood" min="1" max="10" required>
+        </div>
+    </div>
+        <h3>Today's Progress</h3>
+        <div class="progress-form">
+        <div class="form-group2">
+            <div >
+                <label for="section-a">Section A</label>
+                <input id="section-a" type="number" name="section-a" min="0" max="100" placeholder="Enter progress %" required>
+            </div>
+            <div>
+                <label for="section-b">Section B</label>
+                <input id="section-b" type="number" name="section-b" min="0" max="100" placeholder="Enter progress %" required>
+            </div>
+            <div>
+                <label for="section-c">Section C</label>
+                <input id="section-c" type="number" name="section-c" min="0" max="100" placeholder="Enter progress %" required>
+            </div>
+        </div>
+    </div>
+
+        <h3>Today, I am thankful for...</h3>
+        <div class="form-group">
+            <textarea rows="3" placeholder="List things you are thankful for" required></textarea>
+        </div>
+
+        <h3>Today's Lessons</h3>
+        <div class="form-group">
+            <textarea rows="4" placeholder="What lessons did you learn today?" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="sucked">One thing I did that sucked</label>
+            <input type="text" id="sucked" placeholder="One bad thing..." required>
+        </div>
+
+        <button type="button" class="submit-button" id="saveImageButton">Save Form as Image</button>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script>
+  document.getElementById("saveImageButton").addEventListener("click", function () {
+    // Select the form element
+    var form = document.querySelector(".journal-form");
+
+    // Ensure the form has a white background before capture
+    form.style.backgroundColor = "#fff";
+
+    // Capture the form using html2canvas
+    html2canvas(form, {
+      allowTaint: false,           // Ignore tainting issues
+      useCORS: true,               // Allow cross-origin images
+      backgroundColor: "#fff",     // Set a background to prevent black fill
+      scale: 2,                    // High-quality scaling
+      logging: true                // Enable console logging for debugging
+    }).then(function (canvas) {
+      // Convert the canvas to an image
+      var image = canvas.toDataURL("image/png");
+
+      // Create a download link
+      var link = document.createElement("a");
+      link.href = image;
+      link.download = "journal-form-screenshot.png";
+
+      // Trigger the download
+      link.click();
+    }).catch(function (error) {
+      console.error("Error capturing the form:", error);
+    });
+  });
+</script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+<script>
+  function showSidebar(){
+      const sidebar=document.querySelector('.sidebar')
+      sidebar.style.display = 'flex'
+  }
+  function hideSidebar(){
+      const sidebar=document.querySelector('.sidebar')
+      sidebar.style.display = 'none'
+  }
+</script>
+
+</body>
+</html>

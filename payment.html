@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+        <head>
+            <meta charset="UFT-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <link rel="stylesheet" href="style.css">
+            <title>bluethenics</title>
+        </head>
+        <body>
+            <div class="wrapper">
+                <header>
+                    <nav>
+                        <ul class="sidebar">
+                            <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                            <li><a href="index.html">home</a></li>
+                            <li><a href="shop.html">shop</a></li>
+                            <li><a href="progress.html">progress</a></li>
+                            <li><a href="help.html">HELP</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Bluethenics</a></li>
+                            <li class="hideOnMobile"><a href="index.html">home</a></li>
+                            <li class="hideOnMobile"><a href="shop.html">shop</a></li>
+                            <li class="hideOnMobile"><a href="progress.html">progress</a></li>
+                            <li class="hideOnMobile"><a href="help.html">HELP</a></li>
+                            <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+                        </ul>
+                    </nav>
+                </header>
+
+
+                <div class="payment-container">
+                    <h2 class="payment-title">Payment</h2>
+                
+                    <!-- Payment Options -->
+                    <!-- only use when it is usefull fampay
+                    
+                    
+                    <div class="payment-options">
+                        <div class="payment-option">
+                            <button onclick="location.href='upi-button-payment.html'" class="payment-button">
+                                <img src="upi-img.jpg" alt="UPI Payment" class="payment-image">
+                                <span class="payment-text">Pay via UPI</span>
+                            </button>
+                        </div>
+                        -->
+                        <div class="payment-option">
+                            <button onclick="location.href='gpay-button-payment.html'" class="payment-button">
+                                <img src="gpay-img.jpg" alt="Google Pay" class="payment-image">
+                                <span class="payment-text">Pay via Google Pay</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                
+                    <!-- Instructions Section -->
+                    <div class="instructions-section">
+                        <h3 class="instructions-title">Instructions</h3>
+                        <div class="instructions-wrapper">
+                            <ul class="instructions-list">
+                                <li>The payment should be made for the exact price.</li>
+                                <li>After submitting the form and confirming the payment, we will provide the link/PDF for your items via email.</li>
+                                <li>Please allow up to 24 hours for the items to be sent to your Gmail.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+
+                
+                <script>
+                    function showSidebar(){
+                        const sidebar=document.querySelector('.sidebar')
+                        sidebar.style.display = 'flex'
+                    }
+                    function hideSidebar(){
+                        const sidebar=document.querySelector('.sidebar')
+                        sidebar.style.display = 'none'
+                    }
+                </script>
+                </div>
+                </body>
+                </html>
